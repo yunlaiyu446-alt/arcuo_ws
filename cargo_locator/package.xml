@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>cargo_locator</name>
+  <version>0.0.1</version>
+  <description>A package to locate cargo using ArUco markers.</description>
+
+  <maintainer email="typo@example.com">Typo</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend> <!-- 如果您后续决定重新引入 image_transport -->
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>aruco_interfaces</depend> <!-- 确保此依赖项正确 -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
