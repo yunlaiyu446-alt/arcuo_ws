@@ -57,6 +57,6 @@
 
 - 控制器与固件项目：`/Users/yuyunlai/Desktop/V3.5.1`。
 - 香橙派控制工作空间副本：`/Users/yuyunlai/Desktop/zz_ws`。
-- 2026-09-21 已在 GitHub 创建仓库 `https://github.com/yunlaiyu446-alt/arcuo_ws`，当前可见性为 `PUBLIC`、描述为 `camera`，但远程尚无默认分支或提交；本地 Git 根目录 `/Users/yuyunlai/Desktop/arcuo_ws/src` 也尚未配置 `origin`，因此代码还没有推送。
+- 2026-09-21 已将 Git 根目录迁移为 `/Users/yuyunlai/Desktop/arcuo_ws`，并把 `main` 推送到公开仓库 `https://github.com/yunlaiyu446-alt/arcuo_ws`；`origin/main` 是默认远程跟踪分支。由于本机 Git HTTPS 连接异常，当前仓库使用仅限该仓库的 SSH deploy key，经 `ssh.github.com:443` 推送。
 - 2026-09-21 Git 根目录迁移前已创建完整快照 `/Users/yuyunlai/Desktop/arcuo_ws_backups/arcuo_ws_full_before_root_git_20260921_100602.tar.gz`，包含源码、生成目录和原 `src/.git`；SHA-256 为 `bdc63e5781603f97216c34de08c98a4b69acf425dcb75b2c6fb93b2a2843db25`，压缩包已通过 `tar -tzf` 完整性检查。
 - `src/d435_python_camera` 原来是独立 Git 仓库；并入主仓库前已将完整历史保存为 `/Users/yuyunlai/Desktop/arcuo_ws_backups/d435_python_camera_history_20260921_1010.bundle`，其原 `.git` 同时移至同目录下的 `d435_python_camera_dot_git_20260921_1010`。
