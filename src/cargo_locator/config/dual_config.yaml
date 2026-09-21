@@ -1,0 +1,70 @@
+left_cargo_locator_node:
+  ros__parameters:
+    marker_topic: "/left/aruco_markers"
+    camera_frame_id: "cam_left_color_optical_frame"
+    cargo_frame_id: "cargo"
+    marker_frame_id_prefix: "left_aruco_marker_"
+    hanger_pose_topic: "/left/hanger_pose_in_cargo"
+    hanger_position_in_camera_frame: [0.0, 0.105, 0.15]
+    enable_fusion: true
+
+    # aruco码相对于货物的坐标列表
+    # 格式: "<id>,<x>,<y>,<z>"
+    marker_positions: [
+      "1,-0.315,0.0,-0.32",
+      "2,0.0,0.315,-0.32",
+      "3,0.0,0.3,0.0",
+      "4,0.315,0.0,-0.32"
+    ]
+
+    # 状态重置参数
+    reset_position_threshold: 0.2
+    reset_angle_threshold: 15.0
+    enable_reset: true
+
+    # EKF参数
+    ekf_initial_covariance_diagonal: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    ekf_process_noise_diagonal: [1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4]
+    ekf_measurement_noise_diagonal: [1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4]
+
+right_cargo_locator_node:
+  ros__parameters:
+    marker_topic: "/right/aruco_markers"
+    camera_frame_id: "cam_right_color_optical_frame"
+    cargo_frame_id: "cargo"
+    marker_frame_id_prefix: "right_aruco_marker_"
+    hanger_pose_topic: "/right/hanger_pose_in_cargo"
+    hanger_position_in_camera_frame: [0.0, 0.105, 0.15]
+    enable_fusion: true
+
+    # aruco码相对于货物的坐标列表
+    # 格式: "<id>,<x>,<y>,<z>"
+    marker_positions: [
+      "1,-0.315,0.0,-0.32",
+      "2,0.0,0.315,-0.32",
+      "3,0.0,0.3,0.0",
+      "4,0.315,0.0,-0.32"
+    ]
+
+    # 状态重置参数
+    reset_position_threshold: 0.2
+    reset_angle_threshold: 15.0
+    enable_reset: true
+
+    # EKF参数
+    ekf_initial_covariance_diagonal: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    ekf_process_noise_diagonal: [1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4]
+    ekf_measurement_noise_diagonal: [1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4, 1e-4]
+
+hanger_pose_fusion_node:
+  ros__parameters:
+    left_pose_topic: "/left/hanger_pose_in_cargo"
+    right_pose_topic: "/right/hanger_pose_in_cargo"
+    output_pose_topic: "/target_frame/pose"
+    output_frame_id: "cargo"
+    max_sync_time_diff: 0.05
+    position_consistency_threshold: 0.05
+    angle_consistency_threshold: 15.0
+    left_weight: 1.0
+    right_weight: 1.0
+    publish_single_observation: true

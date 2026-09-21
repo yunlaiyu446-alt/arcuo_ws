@@ -1,0 +1,10 @@
+d435_python_camera_node:
+  ros__parameters:
+    serial_no: ""
+    width: 640
+    height: 480
+    fps: 30
+    frame_id: "camera_color_optical_frame"
+    image_topic: "/camera/color/image_raw"
+    camera_info_topic: "/camera/color/camera_info"
+    frame_timeout_ms: 1000

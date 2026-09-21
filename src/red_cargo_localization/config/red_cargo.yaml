@@ -1,0 +1,24 @@
+red_cargo_localizer:
+  ros__parameters:
+    input_topic: /camera/depth_registered/points
+
+    # Meters in the input cloud's optical frame.
+    min_depth: 0.2
+    max_depth: 5.0
+    min_x: -10.0
+    max_x: 10.0
+    min_y: -10.0
+    max_y: 10.0
+
+    # HSV hue is expressed in degrees; saturation and value are in [0, 1].
+    red_hue_low_1: 0.0
+    red_hue_high_1: 15.0
+    red_hue_low_2: 345.0
+    red_hue_high_2: 360.0
+    min_saturation: 0.45
+    min_value: 0.15
+
+    voxel_size: 0.01
+    cluster_tolerance: 0.05
+    min_cluster_points: 30
+    publish_red_cloud: true
